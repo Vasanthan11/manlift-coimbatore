@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enquiry Form - Manlift Rentals Coimbatore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-main: #5D2F77;
+      --primary-alt: #6B3F69;
+      --accent-soft: #8D5F8C;
+      --bg-cream: #FFECC0;
+      --bg-rose: #DDC3C3;
+      --white: #ffffff;
+      --black: #000000;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: radial-gradient(circle at top left, var(--bg-cream), #ffffff 40%, var(--bg-rose));
+      color: var(--primary-alt);
+    }
+
+    .form-section {
+      width: 100%;
+      padding: 3.5rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-wrapper {
+      width: 100%;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+      gap: 0;
+      background: var(--white);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(93, 47, 119, 0.08);
+    }
+
+    /* LEFT PANEL (INFO) */
+    .form-info {
+      padding: 2.6rem 2.8rem;
+      background: radial-gradient(circle at top left, var(--bg-cream) 0, var(--primary-main) 40%, var(--primary-alt) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-info::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at bottom right, rgba(141, 95, 140, 0.22), transparent 55%);
+      pointer-events: none;
+    }
+
+    .form-info-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-info h2 {
+      font-size: 1.65rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .form-info span.highlight {
+      color: var(--bg-cream);
+    }
+
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      opacity: 0.96;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 236, 192, 0.55);
+      background: rgba(255, 236, 192, 0.1);
+      backdrop-filter: blur(3px);
+      color: var(--bg-cream);
+      white-space: nowrap;
+    }
+
+    .contact-block {
+      font-size: 0.86rem;
+      line-height: 1.8;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-top: 0.85rem;
+      letter-spacing: 0.16em;
+    }
+
+    .contact-block a {
+      color: var(--bg-cream);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-block a:hover {
+      color: var(--bg-rose);
+    }
+
+    /* RIGHT PANEL (FORM) */
+    .form-panel {
+      padding: 2.6rem 2.8rem;
+      background: linear-gradient(145deg, #ffffff, rgba(255, 236, 192, 0.4));
+    }
+
+    .form-heading {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      color: var(--accent-soft);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin: 0.35rem 0 0.85rem;
+      color: var(--primary-alt);
+    }
+
+    .sub {
+      font-size: 0.86rem;
+      margin-bottom: 1.7rem;
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem 1.4rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--primary-alt);
+    }
+
+    label .required {
+      color: #c0392b;
+    }
+
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid rgba(93, 47, 119, 0.18);
+      background: rgba(255, 255, 255, 0.9);
+      transition: 0.2s;
+      outline: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(0, 0, 0, 0.35);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary-main);
+      box-shadow: 0 0 0 2px rgba(93, 47, 119, 0.18);
+      background: #ffffff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 96px;
+    }
+
+    .submit-row {
+      grid-column: 1 / -1;
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn-submit {
+      padding: 0.85rem 1.9rem;
+      border-radius: 999px;
+      background: var(--primary-main);
+      border: none;
+      cursor: pointer;
+      font-size: 0.87rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: 0.2s;
+      box-shadow: 0 18px 30px rgba(93, 47, 119, 0.35);
+      white-space: nowrap;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-soft);
+      box-shadow: 0 22px 38px rgba(93, 47, 119, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .submit-note {
+      font-size: 0.78rem;
+      opacity: 0.7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .form-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .form-info {
+        display: none;
+      }
+
+      .form-panel {
+        padding: 2.3rem 1.6rem;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width {
+        grid-column: 1 / 2;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-section {
+        padding: 3rem 1.1rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="form-section">
+  <div class="form-wrapper">
+
+    <!-- LEFT PANEL (hidden on mobile) -->
+    <div class="form-info">
+      <div class="form-info-inner">
+        <h2>
+          Lift Rentals for Your Projects<br>
+          <span class="highlight">In Coimbatore & Nearby Areas</span>
+        </h2>
+        <p class="description">
+          Boom lifts, scissor lifts and manlifts for industrial, commercial and maintenance work
+          in and around Coimbatore. Share your requirement and we’ll send a tailored quote.
+        </p>
+
+        <div class="chip-row">
+          <span class="chip">Fast response</span>
+          <span class="chip">Competitive rental rates</span>
+          <span class="chip">On-site support</span>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-label">Call</div>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+
+          <div class="contact-label">Email</div>
+          <a href="mailto:info@boomliftrentcoimbatore.com">info@boomliftrentcoimbatore.com</a>
+          
+<div class="contact-label">Our Address</div>
+          <strong>Coimbatore - K K Chavadi</strong>
+
+          <div class="contact-label">Working Hours</div>
+          <strong>Mon – Sat, 9:00 AM to 7:00 PM</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM PANEL -->
+    <div class="form-panel">
+      <div class="form-heading">Enquiry form for boom / scissor / manlift rentals</div>
+      <h3>Tell us about your requirement</h3>
+      <p class="sub">Fill in the details below and our Coimbatore team will contact you with a quote.</p>
+
+      <form action="form-handler.php" method="post">
+        <!-- REQUIRED -->
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" name="full_name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Number <span class="required">*</span></label>
+          <input type="tel" name="phone" required>
+        </div>
+
+        <!-- OPTIONAL -->
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email">
+        </div>
+
+        <div class="form-group">
+          <label>Area / Location</label>
+          <input type="text" name="location">
+        </div>
+
+        <div class="form-group full-width">
+          <label>Select Equipment</label>
+          <select name="equipment">
+            <option value="">-- Select equipment --</option>
+            <option value="Boom Lift">Boom Lift</option>
+            <option value="Scissor Lift">Scissor Lift</option>
+            <option value="Man Lift">Man Lift</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Request to get quote</label>
+          <textarea name="message" placeholder="Share site details, lift height, rental duration, access conditions, etc."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">
+            CLICK HERE TO Get Your Quote
+          </button>
+          <span class="submit-note">We typically respond within one business day.</span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

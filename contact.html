@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Manlift Hyderabad – Boom, Scissor & Man Lift Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================
+       RESET & VARIABLES
+    ============================= */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-main: #5D2F77;
+      --primary-alt: #6B3F69;
+      --accent: #8D5F8C;
+      --bg-cream: #FFECC0;
+      --bg-rose: #DDC3C3;
+      --white: #ffffff;
+      --black: #000000;
+      --text-dark: #201322;
+      --text-muted: #615765;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 80px; /* space for navbar fragment */
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 3rem 1.25rem;
+      }
+    }
+
+    /* ============================
+       TYPOGRAPHY
+    ============================= */
+    .section-header {
+      margin-bottom: 2.4rem;
+      text-align: left;
+    }
+
+    .section-header.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+    }
+
+    .section-header.center .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================
+       BUTTONS
+    ============================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      outline: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      white-space: nowrap;
+    }
+
+    /* Purple button for light/white backgrounds */
+    .btn-purple {
+      background-color: var(--primary-main);
+      color: var(--white);
+      border-color: var(--primary-main);
+    }
+
+    .btn-purple:hover {
+      background-color: var(--white);
+      color: var(--primary-main);
+      border-color: var(--primary-main);
+    }
+
+    /* White button for purple backgrounds */
+    .btn-white {
+      background-color: var(--white);
+      color: var(--primary-main);
+      border-color: var(--white);
+    }
+
+    .btn-white:hover {
+      background-color: var(--bg-cream); /* darker purple on hover */
+      color: var(--black);
+      border-color: var(--primary-alt);
+    }
+
+    .btn-sm {
+      padding: 0.55rem 1.3rem;
+      font-size: 0.8rem;
+    }
+
+    /* ============================
+       REVEAL
+    ============================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal-left {
+      transform: translateX(-50px);
+    }
+
+    .reveal-right {
+      transform: translateX(50px);
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateX(0) translateY(0);
+    }
+
+    /* ============================
+       HERO SECTION
+    ============================= */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-rose) 100%);
+      padding-top: 4.5rem;
+      padding-bottom: 4.2rem;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.18;
+      margin-bottom: 0.7rem;
+      color: var(--text-dark);
+    }
+
+    .hero-title span {
+      color: var(--primary-main);
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+      margin: 0 auto 1.6rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.4rem;
+      margin-top: 1.6rem;
+    }
+
+    .hero-pill {
+      background-color: var(--white);
+      border-radius: 18px;
+      padding: 1rem 1.2rem;
+      max-width: 260px;
+      text-align: left;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .hero-pill-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-pill-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    /* ============================
+       TALK TO A PERSON
+    ============================= */
+    .contact-desk {
+      background-color: var(--white);
+    }
+
+    .desk-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .desk-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .desk-card,
+    .desk-side-card {
+      background-color: var(--bg-cream);
+      border-radius: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.08);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .desk-card + .desk-card-inner {
+      margin-top: 1rem;
+    }
+
+    .desk-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .desk-main {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.1rem;
+    }
+
+    .desk-link {
+      color: var(--primary-main);
+      text-decoration: none;
+      font-size: 0.86rem;
+    }
+
+    .desk-link:hover {
+      text-decoration: underline;
+    }
+
+    .desk-side-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-dark);
+    }
+
+    .desk-side-card ul {
+      list-style: none;
+      margin-top: 0.6rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .desk-side-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    .desk-side-card li::before {
+      content: "•";
+      color: var(--primary-main);
+      margin-right: 0.35rem;
+    }
+
+    /* ============================
+       SERVICE REGIONS + QUESTIONS
+    ============================= */
+    .services {
+      background-color: var(--bg-cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      background-color: var(--bg-rose);
+      color: var(--text-dark);
+    }
+
+    .service-list {
+      list-style: none;
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .service-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .service-list li::before {
+      content: "•";
+      color: var(--primary-main);
+      margin-right: 0.35rem;
+    }
+
+    .questions-card {
+      background-color: var(--primary-main);
+      border-radius: 18px;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+      font-size: 0.86rem;
+      color: var(--white);
+    }
+
+    .questions-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .questions-list {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .questions-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .questions-list li::before {
+      content: "?";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      margin-right: 0.4rem;
+      font-size: 0.72rem;
+    }
+
+    /* ============================
+       IDEA INTO PLAN (CENTER SECTION) – WHITE
+    ============================= */
+    .idea {
+      background-color: var(--white); /* center section is white */
+    }
+
+    .idea-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .idea-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .idea-main {
+      background-color: var(--bg-cream);
+      border-radius: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      padding: 1.6rem 1.5rem;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.08);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .idea-main h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .idea-main ul {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .idea-main li {
+      margin-bottom: 0.4rem;
+    }
+
+    .idea-main li::before {
+      content: "•";
+      color: var(--primary-main);
+      margin-right: 0.35rem;
+    }
+
+    .idea-side {
+      background-color: var(--primary-main);
+      border-radius: 18px;
+      padding: 1.5rem 1.4rem;
+      color: var(--white);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+      font-size: 0.86rem;
+    }
+
+    .idea-side h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .idea-side small {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ============================
+       BOTTOM ENQUIRY FORM – FULL-WIDTH BG
+    ============================= */
+    .enquiry-band {
+      background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-rose) 100%);
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .enquiry-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 26px;
+      overflow: hidden;
+      background-color: var(--white);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.22);
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr);
+    }
+
+    @media (max-width: 900px) {
+      .enquiry-shell {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .enquiry-info {
+      background: linear-gradient(180deg, var(--primary-main) 0%, var(--primary-alt) 100%);
+      padding: 2.4rem 2rem;
+      color: var(--white);
+    }
+
+    .enquiry-info-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .enquiry-info-sub {
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .info-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .info-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      background-color: rgba(255, 255, 255, 0.16);
+      color: var(--white);
+    }
+
+    .enquiry-info-block {
+      font-size: 0.86rem;
+      margin-top: 1.1rem;
+    }
+
+    .enquiry-info-block label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .enquiry-info-block p,
+    .enquiry-info-block a {
+      font-size: 0.86rem;
+    }
+
+    .enquiry-info-block a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .enquiry-info-block a:hover {
+      text-decoration: underline;
+    }
+
+    .enquiry-form {
+      padding: 2.4rem 2rem;
+      background-color: var(--white);
+      color: var(--text-dark);
+      font-size: 0.86rem;
+    }
+
+    .enquiry-form-header {
+      margin-bottom: 1.4rem;
+    }
+
+    .enquiry-form-header p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0.9rem 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .form-grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .form-row {
+      margin-bottom: 0.9rem;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .form-row span.required {
+      color: var(--primary-main);
+    }
+
+    .form-control,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 0.6rem 0.7rem;
+      font-family: inherit;
+      font-size: 0.86rem;
+      outline: none;
+      color: var(--text-dark);
+      background-color: var(--white);
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-control:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--primary-main);
+    }
+
+    .enquiry-form-footer {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+      justify-content: flex-start;
+    }
+
+    .enquiry-form-footer small {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* INLINE FORM WRAPPER (if you still want to inject the common form) */
+    .enquiry-wrapper {
+      background-color: var(--white);
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .enquiry-wrapper-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.5rem 0 4rem;
+    }
+
+    /* ============================
+       MODAL POPUP
+    ============================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 95vh;
+      overflow: auto;
+      border-radius: 22px;
+      background: transparent;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      z-index: 10;
+      border: none;
+      background: var(--black);
+      color: var(--white);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    #navbar-placeholder,
+    #footer-placeholder {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR FRAGMENT -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- HERO / INTRO -->
+    <section class="hero">
+      <div class="container hero-inner reveal">
+        <div class="hero-tag">Contact & enquiry</div>
+        <h1 class="hero-title">
+          Share your <span>work-at-height plan</span> and we’ll match the right access equipment.
+        </h1>
+        <p class="hero-sub">
+          Tell us where you’re working, how high you need to reach, and when your job is scheduled.
+          Our team will suggest a mix of boom lifts, scissor lifts, man lifts or truck-mounted platforms.
+        </p>
+
+        <button class="btn btn-purple js-open-form">
+          Click here to open the enquiry form
+        </button>
+
+        <div class="hero-pills" style="margin-top:2.1rem;">
+          <div class="hero-pill">
+            <div class="hero-pill-label">Typical requests</div>
+            <div class="hero-pill-title">Short shutdowns & long projects</div>
+            From weekend maintenance jobs to multi-month build-outs, we help you size access equipment
+            for realistic site schedules.
+          </div>
+          <div class="hero-pill">
+            <div class="hero-pill-label">What we look at</div>
+            <div class="hero-pill-title">Height, reach & floor conditions</div>
+            Narrow aisles, gradients, finished floors or outdoor terrain – we use these details
+            to suggest practical options.
+          </div>
+          <div class="hero-pill">
+            <div class="hero-pill-label">How we respond</div>
+            <div class="hero-pill-title">Clear, practical combinations</div>
+            You’ll receive suggested machine sizes, counts and a transparent rental structure – with or
+            without operators.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TALK TO A PERSON -->
+    <section class="contact-desk">
+      <div class="container desk-grid">
+
+        <div class="reveal reveal-left">
+          <header class="section-header">
+            <p class="section-tag">Talk to a person</p>
+            <h2 class="section-title">Call or email the access rentals desk</h2>
+            <p class="section-sub">
+              Prefer a direct conversation instead of filling a form? Use the details below and mention your
+              site location and approximate working height when you connect.
+            </p>
+          </header>
+
+          <div class="desk-card">
+            <div class="desk-label">Phone</div>
+            <div class="desk-main">+91 99999 99999</div>
+            <a class="desk-link" href="tel:+919999999999">Tap here to call from your phone</a>
+          </div>
+
+          <div class="desk-card" style="margin-top:0.9rem;">
+            <div class="desk-label">Email</div>
+            <div class="desk-main">info@boomliftrentalsindia.com</div>
+            <a class="desk-link" href="mailto:info@boomliftrentalsindia.com">Tap here to draft an email</a>
+          </div>
+
+          <div style="margin-top:1rem;font-size:0.82rem;color:var(--text-muted);">
+            <strong style="display:block;margin-bottom:0.25rem;">Helpful details to mention when you contact us:</strong>
+            • City, locality and type of site (warehouse, factory, mall, terminal, yard, etc.).<br>
+            • Maximum required height and whether you need outreach or straight-up access.<br>
+            • Planned start date, shift pattern and how many days or weeks you expect.
+          </div>
+        </div>
+
+        <aside class="desk-side-card reveal reveal-right">
+          <h3>Examples of calls we handle every day</h3>
+          <p>
+            When you contact us, you don’t need a perfect technical description. A simple explanation
+            of your work is enough to begin.
+          </p>
+          <ul>
+            <li>“We’re changing façade panels on a completed building for the next two weeks.”</li>
+            <li>“We have a warehouse with 11m racks and need to use lighting above the aisles.”</li>
+            <li>“Our site has partly finished floors and open areas – we’re not sure what mix we need.”</li>
+            <li>“We’ve already used one type of lift and want to check if there’s a safer or faster option.”</li>
+          </ul>
+          <p style="margin-top:0.8rem;">
+            If you’re unsure how to describe your requirement, start with height, photos (if possible)
+            and a rough sketch of the work area – we’ll take it from there.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- SERVICE REGIONS + QUESTIONS -->
+    <section class="services">
+      <div class="container services-grid">
+
+        <div class="reveal reveal-left">
+          <header class="section-header">
+            <p class="section-tag">Service regions</p>
+            <h2 class="section-title">Where we commonly support height access work</h2>
+            <p class="section-sub">
+              Our equipment moves wherever projects require it, with a strong focus on key industrial,
+              commercial and infrastructure pockets.
+            </p>
+          </header>
+
+          <div class="badge-row">
+            <span class="badge">Industrial belts</span>
+            <span class="badge">Hydrocarbon clusters</span>
+            <span class="badge">Logistics & warehousing</span>
+            <span class="badge">Large commercial sites</span>
+          </div>
+
+          <ul class="service-list">
+            <li>City & metro zones with warehouses, fulfilment centres and corporate campuses.</li>
+            <li>Industrial plants for process, utilities, fabrication yards and engineering hubs.</li>
+            <li>Malls, showrooms and hospitality properties for fit-outs and maintenance.</li>
+            <li>Infrastructure corridors such as airports, metros, bridges and terminals.</li>
+          </ul>
+
+          <p style="font-size:0.84rem;color:var(--text-muted);margin-top:0.5rem;">
+            If your site falls outside usual routes, send us the pin and a short note.
+            We’ll confirm feasibility, travel time and how rentals will be structured.
+          </p>
+        </div>
+
+        <aside class="questions-card reveal reveal-right">
+          <div class="questions-card-title">Quick contact questions</div>
+          <p style="margin-bottom:0.6rem;">
+            These are the small but important questions clients often ask before they share details:
+          </p>
+          <ul class="questions-list">
+            <li>Do I need exact machine models, or can I just share height and photos?</li>
+            <li>Can you estimate how many days we actually need the equipment?</li>
+            <li>What if our floor cannot take the full load at some locations?</li>
+            <li>How should we plan operator support if we have multiple shifts?</li>
+          </ul>
+          <p style="margin-top:0.8rem;">
+            If you have a different question, simply add it inside the enquiry form or mention it on
+            the call. We’ll answer along with our equipment suggestions.
+          </p>
+          <button class="btn btn-white btn-sm js-open-form" style="margin-top:0.9rem;">
+            Click here to ask your question
+          </button>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- IDEA INTO PLAN – CENTER SECTION (WHITE) -->
+    <section class="idea">
+      <div class="container idea-grid">
+
+        <div class="idea-main reveal reveal-left">
+          <h2>Ready to turn your height-access idea into a plan?</h2>
+          <p>
+            A short, honest description of your work and constraints is more useful than a long technical specification.
+            Start with what you know today – we’ll help fill in the gaps.
+          </p>
+          <ul>
+            <li>What you need to do at height and how often you’ll move between points.</li>
+            <li>Whether there are indoor, outdoor or a mix of both types of areas.</li>
+            <li>Any obstacles like pipes, ducts, beams, low doorways or narrow routes.</li>
+            <li>Internal safety rules we should consider while suggesting platforms.</li>
+          </ul>
+          <button class="btn btn-purple btn-sm js-open-form" style="margin-top:1rem;">
+            Click here to share your rough plan
+          </button>
+        </div>
+
+        <aside class="idea-side reveal reveal-right">
+          <h3>Prefer to keep things simple? Use our common enquiry form.</h3>
+          <p>
+            The form lets you type freely, attach details and request a callback window that suits
+            your team. You can also mention if you’re comparing multiple rental options.
+          </p>
+          <small>
+            Want to speak directly? Call +91 99999 99999 or email
+            info@boomliftrentalsindia.com – we’ll connect you with the access coordinator for your region.
+          </small>
+          <button class="btn btn-white btn-sm js-open-form" style="margin-top:1rem;">
+            Click here to open the form
+          </button>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- BOTTOM ENQUIRY FORM – FULL-WIDTH BG -->
+    <section class="enquiry-band">
+      <div class="enquiry-shell reveal">
+
+        <!-- LEFT: INFO -->
+        <div class="enquiry-info">
+          <h3 class="enquiry-info-title">Lift rentals for your projects in Hyderabad & nearby areas</h3>
+          <p class="enquiry-info-sub">
+            Boom lifts, scissor lifts and man lifts for industrial, commercial and maintenance work.
+            Share your requirement and we’ll send a tailored quote.
+          </p>
+
+          <div class="info-pill-row">
+            <span class="info-pill">Fast response</span>
+            <span class="info-pill">Competitive rental rates</span>
+            <span class="info-pill">On-site support</span>
+          </div>
+
+          <div class="enquiry-info-block">
+            <label>Call</label>
+            <p>+91 99999 99999</p>
+          </div>
+
+          <div class="enquiry-info-block">
+            <label>Email</label>
+            <p><a href="mailto:info@boomliftrentalsindia.com">info@boomliftrentalsindia.com</a></p>
+          </div>
+
+          <div class="enquiry-info-block">
+            <label>Working hours</label>
+            <p>Mon – Sat, 9:00 AM to 7:00 PM</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="enquiry-form">
+          <div class="enquiry-form-header">
+            <div class="section-tag" style="margin-bottom:0.35rem;">Enquiry form for boom / scissor / manlift rentals</div>
+            <h2 class="section-title" style="font-size:1.5rem;margin-bottom:0;">
+              Tell us about your requirement
+            </h2>
+            <p>Fill in the details below and our team will contact you with a quote.</p>
+          </div>
+
+          <form>
+            <div class="form-grid-2">
+              <div class="form-row">
+                <label>Full name <span class="required">*</span></label>
+                <input class="form-control" type="text" name="full_name" placeholder="">
+              </div>
+              <div class="form-row">
+                <label>Contact number <span class="required">*</span></label>
+                <input class="form-control" type="text" name="contact_number" placeholder="">
+              </div>
+              <div class="form-row">
+                <label>Email address</label>
+                <input class="form-control" type="email" name="email" placeholder="">
+              </div>
+              <div class="form-row">
+                <label>Area / location</label>
+                <input class="form-control" type="text" name="location" placeholder="">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label>Select equipment</label>
+              <select class="form-select" name="equipment">
+                <option value="">-- Select equipment --</option>
+                <option>Boom lift rentals</option>
+                <option>Scissor lift rentals</option>
+                <option>Man lift rentals</option>
+                <option>Cherry picker rentals</option>
+                <option>Mixed fleet / not sure</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label>Request to get quote</label>
+              <textarea class="form-textarea" name="message"
+                placeholder="Share site details, lift height, rental duration, access conditions, etc."></textarea>
+            </div>
+
+            <div class="enquiry-form-footer">
+              <button type="submit" class="btn btn-purple">
+                Click here to get your quote
+              </button>
+              <small>We typically respond within one business day.</small>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- (OPTIONAL) inline common enquiry form fragment -->
+    <section class="enquiry-wrapper" style="display:none;">
+      <div class="enquiry-wrapper-inner" id="form-inline-placeholder">
+        <!-- form.html will be injected here if you enable it -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER FRAGMENT -->
+  <div id="footer-placeholder"></div>
+
+  <!-- POPUP FORM MODAL -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="formModalClose" aria-label="Close form">&times;</button>
+      <div class="modal-content-wrapper" id="formModalContent">
+        <!-- form.html will be loaded here on first open -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // NAVBAR
+      fetch("navbar.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+          initNavbar();
+        })
+        .catch(err => console.error("Error loading navbar.html", err));
+
+      // FOOTER
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(err => console.error("Error loading footer.html", err));
+
+      // (Optional) bottom shared form – currently hidden
+      // fetch("form.html")
+      //   .then(res => res.text())
+      //   .then(html => {
+      //     document.getElementById("form-inline-placeholder").innerHTML = html;
+      //   })
+      //   .catch(err => console.error("Error loading form.html (inline)", err));
+
+      setupScrollReveal();
+      setupFormPopup();
+    });
+
+    // NAVBAR: mobile toggle, hide call button on mobile if needed
+    function initNavbar() {
+      const header = document.getElementById("siteHeader");
+      const toggle = document.getElementById("navToggle");
+      const callBtn = document.querySelector(".nav-call-btn");
+
+      if (!header || !toggle) return;
+
+      toggle.addEventListener("click", function () {
+        header.classList.toggle("nav-open");
+      });
+
+      const navLinks = header.querySelectorAll(".nav-links a");
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          header.classList.remove("nav-open");
+        });
+      });
+
+      function handleMobile() {
+        if (window.innerWidth < 768) {
+          if (callBtn) callBtn.style.display = "none";
+        } else {
+          if (callBtn) callBtn.style.display = "inline-flex";
+        }
+      }
+      handleMobile();
+      window.addEventListener("resize", handleMobile);
+    }
+
+    // POPUP FORM
+    function setupFormPopup() {
+      var modal = document.getElementById("formModal");
+      var modalClose = document.getElementById("formModalClose");
+      var modalContent = document.getElementById("formModalContent");
+      var formLoaded = false;
+
+      document.addEventListener("click", function (event) {
+        if (event.target.closest(".js-open-form")) {
+          event.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        if (!formLoaded) {
+          fetch("form.html")
+            .then(res => res.text())
+            .then(html => {
+              modalContent.innerHTML = html;
+              formLoaded = true;
+            })
+            .catch(err => {
+              modalContent.innerHTML =
+                "<div style='background:#FFECC0;padding:2rem;border-radius:1rem;color:#201322;'>Unable to load enquiry form.</div>";
+            });
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    }
+
+    // SCROLL REVEAL
+    function setupScrollReveal() {
+      var elements = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        elements.forEach(function (el) { el.classList.add("reveal-visible"); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      elements.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+  </script>
+
+</body>
+</html>

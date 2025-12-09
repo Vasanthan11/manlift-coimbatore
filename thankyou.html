@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You - Manlift Rentals Coimbatore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-main: #5D2F77;
+      --primary-alt: #6B3F69;
+      --accent-soft: #8D5F8C;
+      --bg-cream: #FFECC0;
+      --bg-rose: #DDC3C3;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Poppins", system-ui, sans-serif;
+      background: radial-gradient(circle at top left, var(--bg-cream), #ffffff 40%, var(--bg-rose));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      color: var(--primary-alt);
+    }
+
+    .thankyou-card {
+      max-width: 520px;
+      width: 100%;
+      background: var(--white);
+      border-radius: 22px;
+      padding: 2.5rem 2.4rem;
+      text-align: center;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(93, 47, 119, 0.08);
+    }
+
+    .icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at top left, var(--bg-cream), var(--primary-main));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 2.2rem;
+      box-shadow: 0 14px 28px rgba(93, 47, 119, 0.35);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 1.7rem;
+    }
+
+    .info {
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.8rem 1.9rem;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary-main);
+      color: var(--white);
+      box-shadow: 0 18px 30px rgba(93, 47, 119, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+      box-shadow: 0 22px 38px rgba(93, 47, 119, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--primary-main);
+      border: 1px solid var(--primary-main);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-main);
+      color: var(--white);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.35rem;
+      }
+      .thankyou-card {
+        padding: 2.2rem 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-card">
+    <div class="icon">✓</div>
+
+    <h1>Thank You for Your Enquiry!</h1>
+
+    <p>
+      Your request for lift rental has been successfully submitted.
+      Our Coimbatore team will review your details and contact you shortly
+      with a customised quote.
+    </p>
+
+    <div class="info">
+      Working Hours: Mon – Sat, 9:00 AM to 7:00 PM<br>
+      Call: <strong>+91 72000 37244</strong>
+    </div>
+
+    <div class="btn-group">
+      <a href="form.html" class="btn btn-outline">Submit Another Enquiry</a>
+      <a href="index.html" class="btn btn-primary">Go to Home</a>
+    </div>
+  </div>
+
+</body>
+</html>
